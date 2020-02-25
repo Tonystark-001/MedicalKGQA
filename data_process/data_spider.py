@@ -356,6 +356,6 @@ if __name__ == '__main__':
 	handler = MedicalSpider()
 	utils.set_logger(handler.log_path)
 	# handler.spider_main()
-
+	print("test VSC")
 	handler.merge_all_json_file(18)
 	# data = handler.load_json(handler.local_file_path)
