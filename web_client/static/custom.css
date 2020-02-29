@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+# Helper Utilities
+--------------------------------------------------------------*/
+.flex {
+    display: flex !important;
+}
+
+
+/*--------------------------------------------------------------
+# nav-bar
+--------------------------------------------------------------*/
+
+.nav-bar {
+    padding: 20px 0;
+    background-color: darkgray;
+}
+
+.site-title {
+    padding: 6px 0;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: left;
+    color: mediumslateblue;
+}
+
+.site-title img {
+    width: 40px;
+    height: 40px;
+}
+
+/*--------------------------------------------------------------
+# content-menu
+--------------------------------------------------------------*/
+.content-menu {
+    margin-top: 3em;
+}
+
+.project-desc {
+    margin-top: 3em;
+}
+
+
+
+/*--------------------------------------------------------------
+# question-main
+--------------------------------------------------------------*/
+
+.question-main {
+    margin-top: 3em;
+}
+
+.question-main .container {
+    max-width: 500px;
+}
+
+
+
+span > i {
+    color: white;
+}
+span > input {
+    background: none;
+    color: white;
+    padding: 0;
+    border: 0;
+}

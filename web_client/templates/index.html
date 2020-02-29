@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='custom.css')}}">
+    <!--<link rel="stylesheet" href="../static/custom.css" type="text/css">-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="container">
+            <div class="row flex align-items-center">
+                <div class="col-9 col-lg-3">
+                    <div class="site-branding">
+                        <h2 class="site-title"><img src="{{url_for('static',filename='images/SXU.png')}}" alt=""></h2>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-9 flex justify-content-end align-items-center">
+                    <h3 class="text-success">基于常见疾病的知识图谱及问答系统</h3>
+                </div>
+            </div> <!--end row-->
+        </div> <!-- container-->
+    </div> <!--nav-bar-->
+
+    <div class="project-desc">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 flex justify-content-start align-items-center">
+                    <p>对哇对哇对哇对哇对哇对哇对哇对哇服务</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">知识图谱</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="http://localhost:7474/browser/" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-12 col-lg-6 flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">问答系统</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="{{url_for('question_answer')}}" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
