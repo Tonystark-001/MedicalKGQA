@@ -9,6 +9,7 @@
 from answer_search import *
 from question_classification import *
 from question_parser import *
+import dill #序列号objedt
 
 class QuestionAnswerSystem(object):
 	def __init__(self):
@@ -17,7 +18,7 @@ class QuestionAnswerSystem(object):
 		self.answer_searcher = AnswerSearcher()
 
 	def question_answer_main(self,question):
-		answer = "Hello ~"
+		answer = "非常抱歉，这个问题超出小医的能力范围！"
 		classify_res = self.classifier.classify_main(question)
 		if not classify_res: # 无法解析问句
 			return answer
@@ -32,8 +33,4 @@ class QuestionAnswerSystem(object):
 			return '\n'.join(final_answers)
 
 if __name__ == '__main__':
-	handler = QuestionAnswerSystem()
-	while True:
-		question = input("用户:")
-		answer = handler.question_answer_main(question)
-		print("小威：",answer)
+	pass

@@ -12,16 +12,21 @@ import logging
 
 class QuestionClassifier(object):
 	def __init__(self):
-		self.cur_dir = "/".join(os.path.abspath(__file__).split("/")[:-1])
-		self.log_path = os.path.join(self.cur_dir, 'log/question_classification.txt')
+		# self.cur_dir = "/".join(os.path.abspath(__file__).split("/")[:-1])
+		if "MedicalKGQA" not in os.path.abspath(os.path.dirname(os.getcwd())):
+			self.project_dir = os.path.join(os.path.abspath(os.path.dirname(os.getcwd())),"MedicalKGQA")
+		else:
+			self.project_dir = os.path.abspath(os.path.dirname(os.getcwd()))
+		print("project dir : ", self.project_dir)
+		self.log_path = os.path.join(self.project_dir, 'log/question_classification.txt')
 		# 特征词路径
-		self.disease_path = os.path.join(self.cur_dir, 'region_words/diseases.txt')
-		self.department_path = os.path.join(self.cur_dir, 'region_words/departments.txt')
-		self.check_path = os.path.join(self.cur_dir, 'region_words/checks.txt')
-		self.drug_path = os.path.join(self.cur_dir, 'region_words/drugs.txt')
-		self.food_path = os.path.join(self.cur_dir, 'region_words/foods.txt')
-		self.symptom_path = os.path.join(self.cur_dir, 'region_words/symptoms.txt')
-		self.deny_path = os.path.join(self.cur_dir, 'region_words/deny.txt')
+		self.disease_path = os.path.join(self.project_dir, 'region_words/diseases.txt')
+		self.department_path = os.path.join(self.project_dir, 'region_words/departments.txt')
+		self.check_path = os.path.join(self.project_dir, 'region_words/checks.txt')
+		self.drug_path = os.path.join(self.project_dir, 'region_words/drugs.txt')
+		self.food_path = os.path.join(self.project_dir, 'region_words/foods.txt')
+		self.symptom_path = os.path.join(self.project_dir, 'region_words/symptoms.txt')
+		self.deny_path = os.path.join(self.project_dir, 'region_words/deny.txt')
 
 		# 加载特征词
 		self.disease_words = [word.strip() for word in open(self.disease_path, encoding='utf-8') if word.strip()]
@@ -60,7 +65,7 @@ class QuestionClassifier(object):
 		self.check_qwds = ['检查', '检查项目', '查出', '检查', '测出', '试出','怎么查','查什么']
 		self.belong_qwds = ['属于什么科', '属于', '什么科', '科室','挂号','挂什么','挂什么科室']
 		self.effect_qwds = ['治疗什么', '治啥', '治疗啥', '医治啥', '治愈啥', '主治啥', '主治什么', '有什么用', '有何用', '用处', '用途',
-						  '有什么好处', '有什么益处', '有何益处', '用来', '用来做啥', '用来作甚', '需要', '要']
+						  '有什么好处', '有什么益处', '有何益处', '用来', '用来做啥', '用来作甚', '需要', '要','能干啥']
 		self.treat_cost_qwds = ['多少钱','开销','花费','治疗费用','多少钱','费用']
 		self.medical_insurance_qwds = ['报销','医保','报销比例','合作医疗']
 
