@@ -133,4 +133,30 @@ class AnswerSearcher(object):
 			subject = answers[0]['n.name']
 			final_answer = '通常可以通过{0}检查出来的疾病有{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
 
+		elif question_type == 'disease_department':
+			desc = [i['n.name'] for i in answers]
+			subject = answers[0]['m.name']
+			final_answer = '{0}所属科室为： {1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
+		elif question_type == 'disease_treat_cost':
+			desc = [i['m.treat_cost'] for i in answers]
+			subject = answers[0]['m.name']
+			final_answer = '{0}的治疗费用相关信息：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
+		elif question_type == 'disease_medical_insurance':
+			desc = [i['m.medical_insurance'] for i in answers]
+			subject = answers[0]['m.name']
+			if '是' in desc:
+				final_answer = '{0}是医保疾病'.format(subject)
+			else:
+				pass
+		elif question_type == 'disease_transmission_way':
+			desc = [i['m.transmission_way'] for i in answers]
+			subject = answers[0]['m.name']
+			final_answer = '{0}的传播方式：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
+
+		elif question_type == 'disease_nursing_way':
+			desc = [i['m.nursing'] for i in answers]
+			subject = answers[0]['m.name']
+			final_answer = '{0}的护理方法：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
+
+
 		return final_answer

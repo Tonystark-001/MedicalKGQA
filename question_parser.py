@@ -91,7 +91,14 @@ class QuestionParser(object):
 
 			elif question_type == 'disease_treat_cycle':
 				sql = self.sql_transfer(question_type, entity_dict.get('Disease'))
+
 			elif question_type == 'disease_desc':
+				sql = self.sql_transfer(question_type, entity_dict.get('Disease'))
+
+			elif question_type == 'disease_transmission_way':
+				sql = self.sql_transfer(question_type, entity_dict.get('Disease'))
+
+			elif question_type == 'disease_nursing_way':
 				sql = self.sql_transfer(question_type, entity_dict.get('Disease'))
 
 			sql_dict = {}
@@ -198,5 +205,12 @@ class QuestionParser(object):
 		# TODO 19 疾病描述 disease_treat_cycle
 		elif question_type == 'disease_desc':
 			sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.desc".format(i) for i in entities]
+
+		# TODO 疾病传播方式
+		elif question_type == 'disease_transmission_way':
+			sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.transmission_way".format(i) for i in entities]
+
+		elif question_type == 'disease_nursing_way':
+			sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.nursing".format(i) for i in entities]
 
 		return sql

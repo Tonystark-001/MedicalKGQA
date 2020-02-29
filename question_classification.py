@@ -35,6 +35,7 @@ class QuestionClassifier(object):
 		self.drug_words = [word.strip() for word in open(self.drug_path, encoding='utf-8') if word.strip()]
 		self.food_words = [word.strip() for word in open(self.food_path, encoding='utf-8') if word.strip()]
 		self.symptom_words = [word.strip() for word in open(self.symptom_path, encoding='utf-8') if word.strip()]
+
 		self.deny_words = [word.strip() for word in open(self.deny_path, encoding='utf-8') if word.strip()]
 
 		# 领域特种词
@@ -49,7 +50,7 @@ class QuestionClassifier(object):
 		# 问句疑问词
 		self.symptom_qwds = ['症状', '表征', '现象', '症候', '表现','什么样']
 		self.cause_qwds = ['原因', '成因', '为什么', '怎么会', '怎样才', '咋样才', '怎样会', '如何会', '为啥', '为何', '如何才会', '怎么才会', '会导致',
-						   '会造成']
+						   '会造成','怎么回事','总是','老是']
 		self.complication_qwds = ['并发症', '并发', '一起发生', '一并发生', '一起出现', '一并出现', '一同发生', '一同出现', '伴随发生', '伴随', '共现']
 		self.food_qwds = ['饮食', '饮用', '吃', '食', '伙食', '膳食', '喝', '菜', '忌口', '补品', '保健品', '食谱', '菜谱', '食用', '食物', '补品']
 		self.drug_qwds = ['药', '药品', '用药', '胶囊', '口服液', '炎片','什么药']
@@ -59,8 +60,8 @@ class QuestionClassifier(object):
 							 '怎样才可以不', '怎么才可以不', '咋样才可以不', '咋才可以不', '如何可以不',
 							 '怎样才可不', '怎么才可不', '咋样才可不', '咋才可不', '如何可不']
 		self.treat_cycle_qwds = ['周期', '多久', '多长时间', '多少时间', '几天', '几年', '多少天', '多少小时', '几个小时', '多少年']
-		self.treat_way_qwds = ['怎么治疗', '如何医治', '怎么医治', '怎么治', '怎么医', '如何治', '医治方式', '疗法', '咋治', '怎么办', '咋办', '咋治']
-		self.cure_prob_qwds = ['多大概率能治好', '多大几率能治好', '治好希望大么', '几率', '几成', '比例', '可能性', '能治', '可治', '可以治', '可以医']
+		self.treat_way_qwds = ['怎么治疗', '如何医治', '怎么医治', '怎么治', '怎么医', '如何治', '医治方式', '疗法', '咋治', '怎么办', '咋办', '咋治','治疗方式']
+		self.cure_prob_qwds = ['多大概率能治好', '多大几率能治好', '治好希望大么', '几率', '几成', '比例', '可能性', '能治', '可治', '可以治', '可以医','概率']
 		self.susceptible_qwds = ['易感人群', '容易感染', '易发人群', '什么人', '哪些人', '感染', '染上', '得上']
 		self.check_qwds = ['检查', '检查项目', '查出', '检查', '测出', '试出','怎么查','查什么']
 		self.belong_qwds = ['属于什么科', '属于', '什么科', '科室','挂号','挂什么','挂什么科室']
@@ -68,6 +69,8 @@ class QuestionClassifier(object):
 						  '有什么好处', '有什么益处', '有何益处', '用来', '用来做啥', '用来作甚', '需要', '要','能干啥']
 		self.treat_cost_qwds = ['多少钱','开销','花费','治疗费用','多少钱','费用']
 		self.medical_insurance_qwds = ['报销','医保','报销比例','合作医疗']
+		self.transmission_way_qwds = ['怎么传播','传播','传染']
+		self.nursing_qwds = ['护理','如何护理','护理方式','护理方法','保养']
 
 		logging.info(" - model init finished.")
 
@@ -191,6 +194,16 @@ class QuestionClassifier(object):
 		# 疾病治疗周期
 		if self.check_qwds_type(self.treat_cycle_qwds,question) and ('Disease' in types):
 			question_type = 'disease_treat_cycle'
+			question_types.append(question_type)
+
+		# 疾病传播方式
+		if self.check_qwds_type(self.transmission_way_qwds,question) and ('Disease' in types):
+			question_type = 'disease_transmission_way'
+			question_types.append(question_type)
+
+		# TODO 疾病护理方法
+		if self.check_qwds_type(self.nursing_qwds,question) and ('Disease' in types):
+			question_type = 'disease_nursing_way'
 			question_types.append(question_type)
 
 		# 若没有查到相关的外部查询信息，那么则将该疾病的描述信息返回

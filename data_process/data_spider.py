@@ -20,8 +20,8 @@ class MedicalSpider():
 		self.conn = pymongo.MongoClient("mongodb://localhost:27017/")  # 数据库连接
 		self.db = self.conn["medical"]  # 指定数据库
 		self.col = self.db['data']  # 类似关系数据库中的表
-		self.num_disease = 11000  # 疾病总类别数
-		self.start_page = 1
+		self.num_disease = 1  # 疾病总类别数
+		self.start_page = 38
 
 		self.cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
 		self.local_file_name = "../data/medical.json"
@@ -101,18 +101,18 @@ class MedicalSpider():
 				data['food_info'] = food_data
 				data_list.append(data)
 
-				if len(data_list) % self.save_epochs == 0:
-					file_path = os.path.join(self.cur_dir, "../data/medical_{}.json".format(cnt))
-					self.save_to_json(data_list, file_path)
-					data_list = []
-					cnt += 1
+				# if len(data_list) % self.save_epochs == 0:
+				# 	file_path = os.path.join(self.cur_dir, "../data/medical_{}.json".format(cnt))
+				# 	self.save_to_json(data_list, file_path)
+				# 	data_list = []
+				# 	cnt += 1
 
 			except Exception as e:
 				logging.info(" - {} spider main error".format(page))
 			# 保存文件到本地
-		if data_list:
-			file_path = os.path.join(self.cur_dir, "../data/medical_{}.json".format(cnt))
-			self.save_to_json(data_list, file_path)
+		# if data_list:
+		# 	file_path = os.path.join(self.cur_dir, "../data/medical_{}.json".format(cnt))
+		# 	self.save_to_json(data_list, file_path)
 
 	def gaishu_spider(self, url):
 		'''
@@ -152,9 +152,10 @@ class MedicalSpider():
 					if p_v:
 						if '并发症' in p_title:
 							has_complication = p_v
-						elif '常用药品' in p_title:
+							print(has_complication)
+						if '常用药品' in p_title:
 							common_drug = p_v
-							# print(common_drug)
+							print(common_drug)
 					else:
 						p_v = p.xpath("./span[2]/text()")
 						if p_v:
@@ -354,7 +355,7 @@ class MedicalSpider():
 if __name__ == '__main__':
 
 	handler = MedicalSpider()
-	utils.set_logger(handler.log_path)
-	# handler.spider_main()
-	handler.merge_all_json_file(18)
+	# utils.set_logger(handler.log_path)
+	handler.spider_main()
+	# handler.merge_all_json_file(18)
 	# data = handler.load_json(handler.local_file_path)

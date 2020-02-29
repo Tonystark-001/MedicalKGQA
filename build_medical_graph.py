@@ -270,7 +270,7 @@ class MedicalGraph(object):
 						desc=disease_dict['desc'],
 						medical_insurance=disease_dict['medical_insurance'],
 						disease_ratio=disease_dict['disease_ratio'],
-						disease_dict=disease_dict['susceptible_people'],
+						susceptible_people=disease_dict['susceptible_people'],
 						transmission_way=disease_dict['transmission_way'],
 						treat_way=disease_dict['treat_way'],
 						treat_cycle=disease_dict['treat_cycle'],
