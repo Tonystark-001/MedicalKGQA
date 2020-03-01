@@ -365,8 +365,8 @@ class MedicalGraph(object):
 
 if __name__ == '__main__':
 	handler = MedicalGraph()
-	# utils.set_logger(handler.log_path)
-	# handler.delete_exist_graph()
-	# handler.create_graph_nodes()
-	# handler.create_graph_rels()
-	# handler.export_data()
+	utils.set_logger(handler.log_path)
+	handler.delete_exist_graph()
+	handler.create_graph_nodes()
+	handler.create_graph_rels()
+	handler.export_data()
