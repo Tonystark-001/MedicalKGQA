@@ -1,4 +1,4 @@
-### 实体类型
+### 1.实体类型
 
 |  实体类型  | 中文含义 | 实体数量 |    举例     |
 | ---------- | -------- | -------- | ----------- |
@@ -11,18 +11,17 @@
 |   Total    |   总计   |  24802   | 约2.5万实体 |
 
 
-### 可能的关系
-* <Disease,belongs_to,Department> 疾病所属科室
-* <Disease,inspection_item,Check> 疾病检查项目
-* <Disease,common_drug,Drug> 疾病常用药物
-* <Disease,has_symptom,Symptom> 疾病症状
-* <Disease,recommand_doctor,Doctor> 疾病推荐医生
-* <Disease,good_food,Food>
-* <Disease,avoid_food,Food>
-* <Disease,recommand_recipes,Food>
-* <Disease,has_complication,Symptom>
+### 2.实体关系三元组
+* <Disease,belongs_to,Department> **疾病所属科室**
+* <Disease,inspection_item,Check> **疾病检查项目**
+* <Disease,common_drug,Drug> **疾病常用药物**
+* <Disease,has_symptom,Symptom> **疾病症状**
+* <Disease,good_food,Food> **疾病宜吃食物**
+* <Disease,avoid_food,Food> **疾病忌吃食物**
+* <Disease,recommand_recipes,Food> **推荐食谱**
+* <Disease,has_complication,Symptom> **疾病并发症**
 
-### 实体关系
+### 3.实体关系信息
 
 |   实体关系类型    | 中文含义 | 关系数量 |                     举例                      |
 | ----------------- | -------- | -------- | --------------------------------------------- |
@@ -34,9 +33,10 @@
 | recommand_recipes | 推荐食谱 |  39663   |      <肝病,recommand_recipes,芝麻小米粥>      |
 | has_complication  |  并发症  |  19151   |        <痔疮,has_complication,直肠癌>         |
 |    has_symptom    | 疾病症状 |  58398   | <冠心病,has_symptom,心慌；呼吸困难；心力衰竭> |
+|       Total       |   总计   | 247,007  |                近25万实体关系                 |
 
 
-### Disease properties
+### 4.疾病（中心）节点介绍
 
 |      属性类型      |   中文含义   |                           举例                           |
 | ------------------ | ------------ | -------------------------------------------------------- |
@@ -54,25 +54,7 @@
 |      nursing       |   护理方法   |                       日常护理xxx                        |
 
 
-### 实现思路
-* **图谱构建**
-数据爬取-->数据预处理-->实体类型构建-->关系类型构建-->创建neo4j数据
-* **问题解析:**
- 自然语言查询-->意图识别(Intention Recognition)-->实体识别-->实体链接(Entity Linking)+关系识别(Relation Detection) -->查询语句拼装(Query Construction)-->返回结果选择(Answering Selection)
- * **意图识别:**
- 常用的有：
-  1：基于词典模板的规则分类
-  2：基于过往日志匹配（适用于搜索引擎）
-  3：基于分类模型进行意图识别(CNN,RNN,MachineLearning)
-  我们采用的是基于词典模板的规则分类方法，意图对应项目中的question_type。
-
-  * **实体链接:**
-
-### 技术路线
-    * 前端 ： html、css、jQuery、ajax、bootstrap4
-    * 后端 : Flask、neo4j、scrapy
-
-### 可解决的问题类型
+### 5.可解决的问题类型
 
 |       question_type        |        问题类型        |          举例          |
 | -------------------------- | ---------------------- | ---------------------- |
@@ -84,7 +66,7 @@
 |        drug_disease        |    药物能治疗啥疾病    |  阿莫西林胶囊能治疗啥  |
 |     disease_avoid_food     |        疾病忌口        |     肝病不能吃什么     |
 |     disease_good_food      |        疾病宜吃        |     肺结核吃什么好     |
-|     food_avoid_disease     |  什么疾病不能吃的食物  |  什么人最后不要吃蜂蜜  |
+|     food_avoid_disease     |  什么疾病不能吃的食物  |  什么人最好不要吃蜂蜜  |
 |     food_good_disease      |    食物适合哪些人吃    |    腰果适合哪些人吃    |
 |       disease_check        |      疾病检查项目      | 怎么查出来是不是脑膜炎 |
 |       check_disease        |     已知检查找疾病     |   血常规能查出来啥病   |
@@ -98,14 +80,73 @@
 |    disease_treat_cycle     |    某疾病的治疗周期    |    感冒要多久才能好    |
 |        disease_desc        |        疾病概述        |         抑郁症         |
 
-### 未解决的问题类型
-* 老是头疼怎么办
-* 总是失眠怎么回事
-* 感冒用什么药物 （缺少数据），失眠用什么药（缺失数据）
-* 什么样的人容易感冒
-* 什么人容易得高血压？（bug）
-* 治疗肾结石要多少钱 （不可用）
-* xx治疗方式
+
+### 6.实现思路
+* **图谱构建**
+  * 数据爬取
+  * 数据预处理
+  * 实体类型构建
+  * 关系类型构建
+  * 创建neo4j数据库
+  * 知识图谱可视化
+
+* **问答系统**
+  * 自然语言查询（Question Query）
+  * 意图识别(Intention Recognition)
+  * 实体识别（Entity Recognition）
+  * 实体链接(Entity Linking)[目前未实现]
+  <!-- * 关系识别(Relation Detection) -->
+  * 查询语句构建(Query Construction)
+  * 返回查询结果(Return Answering)
+
+### 7.关键技术方法
+* **数据获取**
+  * scrapy-spider ： 普通的页面解析或分布式爬虫（防止中断数据丢失）
+  * 数据存储：redis、mongodb等
+
+* **实体识别**
+  * **目前采用的方法**
+    * 根据提取的领域关键词，基于trie树构建快速查询AC Tree。
+    * 用AC Tree对输入的自然语言问句,匹配潜在的关键词，作为候选实体
+
+  * **其他方法弊端（针对此项目）**
+    * 因为缺乏大量领域监督数据，无法基于现有的热门方法BiLSTM+CRF训练模型进行识别。
+    * HanLP等平台的工具基本都不提供实体识别方法，并且这些工具的训练语料很少涉及垂直领域知识。
 
 
- **删除 disease_ratio**
+* **意图识别:**
+  * **我们采用的方法**
+      * **基于词典模板的规则分类方法，意图对应项目中的question_type**
+      * **该方法需要领域专家构建模板**
+      * **缺乏大量的监督数据，相比以下其它方法，该方法是较好的选择**
+
+  * **其他常用方法**
+    * 基于词典模板的规则分类
+    * 基于过往日志匹配（适用于搜索引擎）
+    * 基于分类模型进行意图识别(CNN,RNN,MachineLearning)
+
+* **实体链接:**
+  * 缺乏大量监督数据，暂时未做实体连接、知识融合等操作
+  * 可作为改进方向
+
+### 8.实现工具
+  * 前端 ：jQuery、AJAX、Boottrap4、CSS3、HTML5
+  * 后端 : Flask、、Scrapy
+  * 数据库：Neo4j、MongoDB
+
+### 9.已发现未解决的问题类型
+  * 老是头疼怎么办 (常用俗语，不能完全匹配实体)
+  * 失眠用什么药（缺少数据.数据源没有数据的问题）
+  * 感冒用什么药物 （缺少数据.数据源没有数据的问题）
+  * 什么样的人容易感冒？
+
+### 10.项目改进方向：
+  * 实体链接：如何把俗语、常用于准确的链接到知识库中的实体？
+  * 知识库知识完善：现有的知识不完善，可以从其他数据源获取？
+  * 知识融合：从其他数据源获取的知识如何与已有知识库的知识进行有效的融合？
+
+
+
+
+
+ <!-- **删除 disease_ratio** -->
