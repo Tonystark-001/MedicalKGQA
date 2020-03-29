@@ -48,7 +48,7 @@ def index():
 if __name__ == '__main__':
 
     handler = QuestionAnswerSystem()
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
 
 
 # @app.route('/',methods=('GET','POST'))

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1c683bb-2d38-4cea-b2da-f1489649db82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.docx" beforeDir="false" afterPath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +80,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -106,6 +110,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QA_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="KGQA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web_client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_client/app_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,35 +206,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="web_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="KGQA" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\GraduationProject\MedicalKGQA\web_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.web_server" />
-        <item itemvalue="Python.build_medical_graph" />
         <item itemvalue="Python.QA_main" />
+        <item itemvalue="Python.app_main" />
+        <item itemvalue="Python.build_medical_graph" />
         <item itemvalue="Python.data_spider" />
-        <item itemvalue="Python.web_test" />
       </list>
     </recent_temporary>
   </component>
@@ -233,6 +237,7 @@
       <workItem from="1583549715874" duration="4832000" />
       <workItem from="1584007264404" duration="2525000" />
       <workItem from="1584070486503" duration="1255000" />
+      <workItem from="1585379440362" duration="7409000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1582612876760</created>
@@ -290,28 +295,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="112" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583413247878" />
-    <state width="1485" height="250" key="GridCell.Tab.0.bottom" timestamp="1583584132629">
+    <state width="1485" height="250" key="GridCell.Tab.0.bottom" timestamp="1585474770372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="250" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583584132629" />
-    <state width="1485" height="250" key="GridCell.Tab.0.center" timestamp="1583584132629">
+    <state width="1485" height="250" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585474770372" />
+    <state width="1485" height="250" key="GridCell.Tab.0.center" timestamp="1585474770372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="250" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583584132629" />
-    <state width="1485" height="250" key="GridCell.Tab.0.left" timestamp="1583584132628">
+    <state width="1485" height="250" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585474770372" />
+    <state width="1485" height="250" key="GridCell.Tab.0.left" timestamp="1585474770372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="250" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583584132628" />
-    <state width="1485" height="250" key="GridCell.Tab.0.right" timestamp="1583584132629">
+    <state width="1485" height="250" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585474770372" />
+    <state width="1485" height="250" key="GridCell.Tab.0.right" timestamp="1585474770372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1485" height="250" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583584132629" />
+    <state width="1485" height="250" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585474770372" />
+    <state x="176" y="0" key="SettingsEditor" timestamp="1585382797216">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="176" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585382797216" />
     <state x="423" y="91" width="675" height="655" key="StructurePopup" timestamp="1583550156478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="423" y="91" width="675" height="655" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1583550156478" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MedicalKGQA$web_server.coverage" NAME="web_server Coverage Results" MODIFIED="1583552357465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MedicalKGQA$QA_main.coverage" NAME="QA_main Coverage Results" MODIFIED="1585383491834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MedicalKGQA$app_main.coverage" NAME="app_main Coverage Results" MODIFIED="1585383464348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web_client" />
+    <SUITE FILE_PATH="coverage/MedicalKGQA$web_server.coverage" NAME="web_server Coverage Results" MODIFIED="1585454176552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
