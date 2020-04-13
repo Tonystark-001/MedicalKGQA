@@ -116,19 +116,23 @@ class QuestionParser(object):
 		sql = []
 		#TODO 1 已知疾病查询症状 disease_symptom
 		if question_type == 'disease_symptom':
-			sql = ["MATCH (m:Disease)-[r:has_symptom]->(n:Symptom) where m.name = '{0}' return m.name, r.name, n.name".format(i) for i in entities]
+			sql = ["MATCH (m:Disease)-[r:has_symptom]->(n:Symptom) where m.name = '{0}' " \
+				   "return m.name, r.name, n.name".format(i) for i in entities]
 
 		#TODO 2 已知症状判断疾病 symptom_disease
 		elif question_type == 'symptom_disease':
-			sql = ["MATCH (m:Disease)-[r:has_symptom]->(n:Symptom) where n.name = '{0}' return m.name, r.name, n.name".format(i) for i in entities]
+			sql = ["MATCH (m:Disease)-[r:has_symptom]->(n:Symptom) where n.name = '{0}' " \
+				   "return m.name, r.name, n.name".format(i) for i in entities]
 
 		#TODO 3 疾病原因 disease_cause
 		elif question_type == 'disease_cause':
-			sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.cause".format(i) for i in entities]
+			sql = ["MATCH (m:Disease) where m.name = '{0}' " \
+				   "return m.name, m.cause".format(i) for i in entities]
 
 		#TODO 4 并发症 disease_complication
 		elif question_type == 'disease_complication':
-			sql = ["MATCH (m:Disease)-[r:has_complication]->(n:Disease) where m.name = '{0}' return m.name, r.name, n.name".format(i) for i in entities]
+			sql = ["MATCH (m:Disease)-[r:has_complication]->(n:Disease) where m.name = '{0}' " \
+				   "return m.name, r.name, n.name".format(i) for i in entities]
 			# sql2 = [
 			# 	"MATCH (m:Disease)-[r:has_complication]->(n:Disease) where n.name = '{0}' return m.name, r.name, n.name".format(
 			# 		i) for i in entities]

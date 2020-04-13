@@ -12,7 +12,7 @@
 
 .nav-bar {
     padding: 20px 0;
-    background-color: darkgray;
+    background-color: #f5f5f5;
 }
 
 .site-title {
@@ -65,4 +65,16 @@ span > input {
     color: white;
     padding: 0;
     border: 0;
+}
+
+
+.enter-btn{
+    padding: 5px 20px;
+    color: #fff;
+
+}
+
+.card-body a{
+    text-decoration: none;
+    list-style: none;
 }

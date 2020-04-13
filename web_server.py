@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @Time : 2020/2/26 16:08
 # @Author : TianWei
-# @File : web_server.py
+# @File : web_client.py
 # @Software: PyCharm
 # @Organization : NJU
 # @email : cleverzhangw@qq.com
@@ -50,15 +50,3 @@ if __name__ == '__main__':
     handler = QuestionAnswerSystem()
     app.run(debug=True,port=5000)
 
-
-# @app.route('/',methods=('GET','POST'))
-# def index():
-#     global handler
-#     if request.method == 'POST':
-#         question = request.form['question'];
-#         answer = handler.question_answer_main(question)
-#         response_text = jsonify({"answer":answer})
-#     else:
-#         pass
-#             # 跨域请求数据的时候记住一定要是json类型的数据js才能转换
-#     return response_text   #返回的对象必须是是字符串、元组、响应实例或WSGI可调用。

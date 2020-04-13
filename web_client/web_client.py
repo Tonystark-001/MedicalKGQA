@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @Time : 2020/2/26 12:29
 # @Author : TianWei
-# @File : app_main.py
+# @File : web_client.py
 # @Software: PyCharm
 # @Organization : NJU
 # @email : cleverzhangw@qq.com
@@ -24,10 +24,5 @@ def question_answer():
 
 if __name__ == '__main__':
 	app.run(host="127.0.0.1",port=8000,debug=True)
-	# while True:
-	# 	question = input("用户:")
-	# 	data = {"question":question}
-	# 	r1 = requests.post("http://127.0.0.1:5000",data=data)
-	# 	print(r1.json())
 
 

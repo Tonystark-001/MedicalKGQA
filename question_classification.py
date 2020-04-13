@@ -236,19 +236,16 @@ class QuestionClassifier(object):
 		final_word_types = {word:self.word_type_dict.get(word) for word in final_words}
 		return final_word_types
 
-
-	def build_actree(self, word_list):
 		'''
 				构造actree，加速过滤
 				把所有的领域关键词，疾病、症状、检查等构造trie树，方便在给定的
 				输入问句下快速查找所包含的关键词
 			'''
+	def build_actree(self, word_list):
 		actree = ahocorasick.Automaton()
-
 		for ind, word in enumerate(word_list):
 			actree.add_word(word, (ind, word))
 		actree.make_automaton()
-
 		return actree
 
 	def build_word_type_dict(self):
