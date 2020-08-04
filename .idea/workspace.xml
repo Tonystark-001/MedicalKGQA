@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1c683bb-2d38-4cea-b2da-f1489649db82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/QA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/index.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13A1E6A0.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/281C805F.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/404F1856.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4D9AF169.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/56D448C5.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/6BC7621.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/9E08CDEC.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A48A7CFD.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CF763497.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDDF5ED4.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/F7DC25AE.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FB2F3DD7.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.docx" beforeDir="false" afterPath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/基于知识图谱的疾病知识问答系统的设计与实现.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/流程图.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/流程图.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,21 +52,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Job-Find" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\GraduationProject\MedicalKGQA\fyx_web\static\lib" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GraduationProject\MedicalKGQA\images" />
       <recent name="F:\GraduationProject\MedicalKGQA\fyx_web\static\lib" />
       <recent name="F:\GraduationProject\MedicalKGQA\fyx_web" />
       <recent name="F:\GraduationProject\MedicalKGQA" />
       <recent name="F:\GraduationProject\MedicalKGQA\web" />
-      <recent name="F:\GraduationProject\KGQA\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GraduationProject\MedicalKGQA\images" />
+      <recent name="F:\GraduationProject\MedicalKGQA\fyx_web\static\lib" />
     </key>
   </component>
   <component name="RunManager" selected="Python.web_server">
@@ -238,6 +229,7 @@
       <workItem from="1589784279351" duration="733000" />
       <workItem from="1589804308362" duration="181000" />
       <workItem from="1589848355825" duration="604000" />
+      <workItem from="1596531732003" duration="486000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <created>1582612876760</created>
@@ -306,18 +298,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1485" height="250" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589784433548" />
-    <state x="176" y="0" key="SettingsEditor" timestamp="1586770726844">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="176" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586770726844" />
-    <state x="423" y="91" width="675" height="655" key="StructurePopup" timestamp="1583550156478">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="423" y="91" width="675" height="655" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1583550156478" />
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1589804313884">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589804313884" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1596531982435">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596531982435" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MedicalKGQA$QA_main.coverage" NAME="QA_main Coverage Results" MODIFIED="1585383491834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
